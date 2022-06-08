@@ -1,0 +1,98 @@
+.pop-up{
+    position: absolute;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 15% 60% 35%;
+}
+.pop-up_animation{
+    animation: popup 500ms;
+}
+@keyframes popup{
+    0%{opacity: 0; top: 100%;}
+    100%{opacity: 1; top: 0%;}
+}
+.sign-up_container{
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 80%;
+    height: 100%;
+    justify-self: center;
+    align-self: start;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+.pop-up_title{
+    padding: 15px 0px;
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+.pop-up_title h2{
+    text-align: center;
+    grid-column: 2/3;
+}
+.pop-up_title span{
+    grid-column: 3/4;
+    place-self: center;
+    color: red;
+}
+.pop-up_title span:hover{
+    cursor: pointer;
+}
+.form_container{
+    margin-top: 20px;
+    padding: 0px 30px;
+}
+.form_container form div{
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form_container input{
+    border: none;
+    width: 100%;
+    padding: 10px 8px;
+    border: 1px solid #6DD7FE;
+}
+.form_container input:nth-child(1){
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.form_container input:nth-last-child(1){
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.form_container form div:nth-last-child(1){
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 50% 50%;
+}
+#submit_btn{
+    border: none;
+    border-radius: 6px;
+    padding: 6px 0px;
+    width:100%;
+    color: white;
+    background-color: #6DD7FE;
+    font: bold;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.form_container form div:nth-last-child(1) p{
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+.is_displayed{
+    display: none;
+}
