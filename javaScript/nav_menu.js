@@ -1,3 +1,14 @@
+// drop nav-bar menu
+let nav_menu = document.getElementById('nav_menu');
+let profile_container = document.getElementById('profile_container');
+
+profile_container.addEventListener('click', toggle_display)
+
+function toggle_display(){
+    nav_menu.classList.toggle('nav_menu_display');
+    nav_menu.classList.toggle('nav_menu_animation');
+}
+
 //sign up pop up display and animation
 let sign_up = document.getElementById('sign_up');
 let sign_up_popup = document.getElementById('sign_up_popup');

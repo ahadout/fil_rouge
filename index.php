@@ -31,7 +31,7 @@
                 </ul>
                 <ul>
                     <li><a href="#">things to do</a></li>
-                    <li><a href="pages/add_post/basic_infos.php">rent your house</a></li>
+                    <li><a href="pages/basic_infos.php">rent your house</a></li>
                     <li><a href="#">help</a></li>
                 </ul>
             </div>

@@ -5,9 +5,13 @@
     font-family: sans-serif;
     scroll-behavior: smooth;
 }
-header{
+#header{
     width: 100%;
     height: 100vh;
+}
+#header_2{
+    width: 100%;
+    height: 70px;
 }
 .slide_container{
     position: absolute;

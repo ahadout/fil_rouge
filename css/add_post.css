@@ -1,0 +1,60 @@
+.container_1-2-3{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 100%;
+    justify-content: space-between;
+}
+._1{
+    display: flex;
+    color: #0059CD;
+}
+._1 div span{
+    padding: 8px;
+    border: 1px solid #0059CD;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.p1{
+    color: #0059CD;
+}
+.line1_{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+/*  */
+._2{
+    display: flex;
+    color: black;
+}
+._2 div span{
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.p2{
+    color: black;
+    text-align: center;
+}
+._line2{
+    width: 48%;
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+.line2_{
+    width: 48%;
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
