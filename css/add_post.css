@@ -1,8 +1,7 @@
 .container_1-2-3{
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    justify-content: space-between;
 }
 ._1{
     display: flex;
@@ -57,4 +56,50 @@
     justify-self: center;
     align-self: center;
     background-color: black;
+}
+
+/* add post form section*/
+.add_post_section{
+    height: 100%;
+}
+.add_post_form{
+    border: 1px solid #787878;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 20px;
+}
+.add_post_form h2{
+    margin-bottom: 40px;
+}
+.add_post_form form{
+    margin: 30px 0px 0px 0px;
+}
+.add_post_form form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    width: 30%;
+}
+.add_post_form form div label{
+    margin-bottom: 8px;
+}
+.add_post_form form div select{
+    border-radius: 7px;
+    padding: 4px;
+}
+.add_post_form form .button{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0;
+}
+.add_post_form form button{
+    width: 50%;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0059CD;
+    color: white;
+    grid-column: 2/3;
+    justify-self: end;
 }
