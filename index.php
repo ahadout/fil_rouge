@@ -77,8 +77,10 @@
                 <span id="sign-up_close">X</span>
             </div>
             <div class="form_container">
-                <form>
+                <form action="" method="get">
                     <div>
+                        <input type="text" placeholder="First name">
+                        <input type="text" placeholder="Last name">
                         <input type="text" placeholder="Email">
                         <input type="number" placeholder="phone number">
                         <input type="password" placeholder="password">
@@ -86,7 +88,7 @@
                     </div>
                     <div>
                         <button id="submit_btn" type="submit">Submit</button>
-                        <p>You already have an accout?<a href="#">Login</a></p>
+                        <p>You already have an accout?<a>Login</a></p>
                     </div>
                 </form>
             </div>

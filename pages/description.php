@@ -1,25 +1,25 @@
 <?php include('nav.php') ?>
 <main>
     <div class="container_1-2-3">
-        <div class="onit">
-            <div class="onit_num_line margin">
+        <div class="prev">
+            <div class="prev_num_line margin">
                 <div>
                     <span>1</span>
                 </div>
-                <div class="onit_right_line"></div>
+                <div class="prev_right_line"></div>
             </div>
-            <p class="onit_p">basics</p>
+            <p class="prev_p">basics</p>
         </div>
-        <div class="next">
-            <div class="next_num_line margin">
-                <div id="left_line2" class="next_left_line">
+        <div class="onit">
+            <div class="onit_num_line margin">
+                <div id="left_line2" class="onit_left_line">
                 </div>
                 <div>
                     <span>2</span>
                 </div>
-                <div id="right_line2" class="next_righ_line"></div>
+                <div id="right_line2" class="onit_right_line"></div>
             </div>
-            <p id="p2" class="next_p">Describe your service</p>
+            <p id="p2" class="onit_p">Describe your service</p>
         </div>
         <div class="next">
             <div class="next_num_line margin">
@@ -35,7 +35,7 @@
     <section class="add_post_section">
         <div class="add_post_form">
             <h2>general informations</h2>
-            <form action="description.php" method="get">
+            <form action="your_infos.php" method="get">
                 <div>
                     <label for="type">Type of service:</label>
                     <select id="service_type" name="type">

@@ -2,8 +2,45 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
+    padding: 0px 65px;
 }
-._1{
+/* page on */
+.onit_num_line{
+    display: flex;
+    color: #0059CD;
+}
+.onit_num_line div span{
+    padding: 8px;
+    border: 1px solid #0059CD;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.onit_p{
+    color: #0059CD;
+}
+#p2{
+    text-align: center;
+}
+.onit_right_line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+.onit_left_line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid #0059CD;
+    justify-self: center;
+    align-self: center;
+    background-color: #0059CD;
+}
+
+/*  */
+/* ._1{
     display: flex;
     color: #0059CD;
 }
@@ -24,9 +61,86 @@
     justify-self: center;
     align-self: center;
     background-color: black;
+} */
+/* next */
+.next_num_line{
+    display: flex;
+    color: black;
 }
-/*  */
-._2{
+.next_num_line div span{
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.next_p{
+    color: black;
+}
+.next_left_line{
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+#left_line2{
+    width: 48%;
+}
+.next_righ_line{
+    height: 1px;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+#right_line2{
+    width: 48%;
+}
+#next_left_line3{
+    width: 100%;
+}
+#p3{
+    text-align: end;
+}
+.margin{
+    margin-bottom: 5px;
+}
+
+/* pervious */
+.prev_num_line{
+    display: flex;
+    color: #0059CD;
+}
+.prev_num_line div span{
+    padding: 8px;
+    border: 1px solid #0059CD;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+    background-color: #0059CD;
+    color: white;
+}
+.prev_p{
+    color: #0059CD;
+}
+.prev_right_line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid #0059CD;
+    justify-self: center;
+    align-self: center;
+    background-color: #0059CD;
+}
+.prev_left_line{
+    width: 100%;
+    height: 1px;
+    border: 1px solid #0059CD;
+    justify-self: center;
+    align-self: center;
+    background-color: #0059CD;
+}
+/* ._2{
     display: flex;
     color: black;
 }
@@ -56,7 +170,7 @@
     justify-self: center;
     align-self: center;
     background-color: black;
-}
+} */
 
 /* add post form section*/
 .add_post_section{

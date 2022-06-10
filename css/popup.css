@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: grid;
     grid-template-columns: 30% 40% 30%;
-    grid-template-rows: 15% 60% 35%;
+    grid-template-rows: 15% 80% 5%;
 }
 .pop-up_animation{
     animation: popup 500ms;
@@ -24,7 +24,7 @@
     grid-column: 2/3;
     grid-row: 2/3;
     width: 80%;
-    height: 100%;
+    height: fit-content;
     justify-self: center;
     align-self: start;
     border: 1px solid black;
