@@ -1,3 +1,13 @@
+<?php 
+    error_reporting(0);
+    session_start();
+    // if($_GET['signup']=='true'){
+    //     echo 1;
+    // }
+    // elseif($_GET['signup'] == 'false'){
+    //     echo 2;
+    // }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,30 +80,55 @@
             <a href="#main" id="scroll_down"><img src="img/down_icon.png" width="25px" height="25px"></a>
         </div>
     </header>
-    <div class="pop-up is_displayed" id="sign_up_popup">
+    <!-- sign up -->
+    <div class="pop-up <?php if(($_GET['signup'] != 'true') or ($_GET['signup'] != 'false')){ echo('is_displayed');} ?>" id="sign_up_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Sign-up</h2>
                 <span id="sign-up_close">X</span>
             </div>
             <div class="form_container">
-                <form action="" method="get">
+                <?php 
+                if($_GET['signup'] == 'true'){ 
+                ?>
+                    <p>succesfuly registred</p>
+                <?php 
+                }
+                else if($_GET['signup'] == 'false'){
+                ?>
+                <p styel="color: red;"><b>This email is already registred</b></p>
+                <form action="./login_signup/signup.php" method="post">
                     <div>
-                        <input type="text" placeholder="First name">
-                        <input type="text" placeholder="Last name">
-                        <input type="text" placeholder="Email">
-                        <input type="number" placeholder="phone number">
-                        <input type="password" placeholder="password">
-                        <input type="password" placeholder="comfirm password">
+                        <input type="text" placeholder="First name" name="f_name" required>
+                        <input type="text" placeholder="Last name" name="l_name" required>
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="number" placeholder="phone number" name="phone" required>
+                        <input type="password" placeholder="password" name="password" required>
                     </div>
                     <div>
-                        <button id="submit_btn" type="submit">Submit</button>
+                        <button id="submit_btn" type="submit" name="signup">Sign-up</button>
                         <p>You already have an accout?<a>Login</a></p>
                     </div>
                 </form>
+                <?php } else{?>
+                    <form action="./login_signup/signup.php" method="post">
+                    <div>
+                        <input type="text" placeholder="First name" name="f_name" required>
+                        <input type="text" placeholder="Last name" name="l_name" required>
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="number" placeholder="phone number" name="phone" required>
+                        <input type="password" placeholder="password" name="password" required>
+                    </div>
+                    <div>
+                        <button id="submit_btn" type="submit" name="signup">Sign-up</button>
+                        <p>You already have an accout?<a>Login</a></p>
+                    </div>
+                </form>
+                <?php } ?>
             </div>
         </div>
     </div>
+    <!-- login -->
     <div class="pop-up is_displayed" id="login_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
