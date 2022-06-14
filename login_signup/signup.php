@@ -1,7 +1,6 @@
 <?php
     session_start();
     include './connect.php';
-    $alert = "The email you used is already registred";
 
     if(isset($_POST['signup'])){
         $f_name = $_POST['f_name'];

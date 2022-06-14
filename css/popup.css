@@ -96,3 +96,11 @@
 .is_displayed{
     display: none;
 }
+.go_login{
+    text-decoration: none;
+    color: blue;
+}
+.go_login:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -47,3 +47,16 @@ function pop_up_login(){
     nav_menu.classList.toggle('nav_menu_display');
     nav_menu.classList.toggle('nav_menu_animation');
 }
+
+//witch between login-popup and signup-popup
+function switch_to_login(){
+    close_pop_up();
+    login_popup.classList.toggle('is_displayed');
+    login_popup.classList.toggle('pop-up_animation');
+}
+
+function switch_to_signup(){
+    close_login();
+    sign_up_popup.classList.toggle('is_displayed');
+    sign_up_popup.classList.toggle('pop-up_animation');
+}

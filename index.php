@@ -35,10 +35,17 @@
                 <img id="profile_icon" src="img/profil-de-lutilisateur.png" width="35px" height="35px">
             </div>
             <div class="nav_menu nav_menu_display" id="nav_menu">
+                <?php 
+                    if($_SESSION['isLogedin'] == 'true'){?>
+                        <ul>
+                            <li><a><?php echo $_SESSION['last_name']; ?></a></li>
+                        </ul>
+                <?php }else{ ?>
                 <ul>
-                    <li><a href="#" id="sign_up">Sign-up</a></li>
-                    <li><a href="#" id="login">Login</a></li>
+                    <li><a id="sign_up">Sign-up</a></li>
+                    <li><a id="login">Login</a></li>
                 </ul>
+                <?php }?>
                 <ul>
                     <li><a href="#">things to do</a></li>
                     <li><a href="pages/basic_infos.php">rent your house</a></li>
@@ -55,7 +62,7 @@
             </div>
             <div class="arrow_container">
                 <button id="square_left" onclick="slide_left()"><p id="arrow_left"><</p></button>
-                <button id="square_right" onclick="slide_right()"><p id="arrow_right">></p></span>
+                <button id="square_right" onclick="slide_right()"><p id="arrow_right">></p></button>
             </div>
         </div>
         <form class="search_form">
@@ -81,7 +88,7 @@
         </div>
     </header>
     <!-- sign up -->
-    <div class="pop-up <?php if(($_GET['signup'] != 'true') or ($_GET['signup'] != 'false')){ echo('is_displayed');} ?>" id="sign_up_popup">
+    <div class="pop-up <?php if(($_GET['signup'] == 'true') or ($_GET['signup'] == 'false')){ echo('block');}else{echo('is_displayed');} ?>" id="sign_up_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Sign-up</h2>
@@ -96,7 +103,7 @@
                 }
                 else if($_GET['signup'] == 'false'){
                 ?>
-                <p styel="color: red;"><b>This email is already registred</b></p>
+                <p><b style="color: red;">This email is already registred</b></p>
                 <form action="./login_signup/signup.php" method="post">
                     <div>
                         <input type="text" placeholder="First name" name="f_name" required>
@@ -107,7 +114,7 @@
                     </div>
                     <div>
                         <button id="submit_btn" type="submit" name="signup">Sign-up</button>
-                        <p>You already have an accout?<a>Login</a></p>
+                        <p>You already have an accout?<a class="go_login" onclick="switch_to_login()">Login</a></p>
                     </div>
                 </form>
                 <?php } else{?>
@@ -121,7 +128,7 @@
                     </div>
                     <div>
                         <button id="submit_btn" type="submit" name="signup">Sign-up</button>
-                        <p>You already have an accout?<a>Login</a></p>
+                        <p>You already have an accout?<a class="go_login" onclick="switch_to_login()">Login</a></p>
                     </div>
                 </form>
                 <?php } ?>
@@ -129,23 +136,44 @@
         </div>
     </div>
     <!-- login -->
-    <div class="pop-up is_displayed" id="login_popup">
+    <div class="pop-up <?php if(($_GET['login'] == 'true') or ($_GET['login'] == 'false')){ echo('block');}else{echo(' is_displayed');} ?>" id="login_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Login</h2>
                 <span id="login_close">X</span>
             </div>
             <div class="form_container">
-                <form>
+                <?php 
+                if($_GET['login'] == 'true'){ 
+                ?>
+                    <p>succesfuly loged in</p>
+                <?php 
+                }
+                else if($_GET['login'] == 'false'){
+                ?>
+                <p><b style="color: red;">Email or password incorrect</b></p>
+                <form action="./login_signup/login.php" method="post">
                     <div>
-                        <input type="text" placeholder="Email">
-                        <input type="password" placeholder="password">
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="password" placeholder="password" name="password" required>
                     </div>
                     <div>
-                        <button id="submit_btn" type="submit">Submit</button>
-                        <p>You do not have an accout?<a href="#">Sing-up now</a></p>
+                        <button id="submit_btn" type="submit" name="login">Submit</button>
+                        <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
                     </div>
                 </form>
+                <?php } else{?>
+                    <form action="./login_signup/login.php" method="post">
+                    <div>
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="password" placeholder="password" name="password" required>
+                    </div>
+                    <div>
+                        <button id="submit_btn" type="submit" name="login">Submit</button>
+                        <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
+                    </div>
+                </form>
+                <?php }?>
             </div>
         </div>
     </div>
