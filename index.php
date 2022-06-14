@@ -140,7 +140,7 @@
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Login</h2>
-                <span id="login_close">X</span>
+                <?php if($_GET['login']=='true'){echo '<a href="index.php">X</a>';}else{?><span id="login_close">X</span><?php }?>
             </div>
             <div class="form_container">
                 <?php 
