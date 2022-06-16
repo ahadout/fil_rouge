@@ -1,4 +1,14 @@
-<?php include('nav.php') ?>
+<?php
+    session_start();
+    error_reporting(0);
+    include('nav.php');
+    include('../login_signup/connect.php');
+    $_SESSION['type'] = $_POST['type'];
+    $_SESSION['city'] = $_POST['city'];
+    $userID = $_SESSION['userID'];
+    // $sql = "INSERT INTO posts (type, city, userID) VALUES ('$type', '$city', '$userID');";
+    // mysqli_query($connect, $sql);
+?>
 <main>
     <div class="container_1-2-3">
         <div class="prev">
@@ -38,19 +48,19 @@
             <form action="your_infos.php" method="post">
                 <div>
                     <label for="title">Anounce title:</label>
-                    <input type="text" name="title" placeholder="anounce title">
+                    <input type="text" name="title" placeholder="anounce title" required>
                 </div>
                 <div>
                     <label for="location">Location:</label>
-                    <input type="text" name="location" placeholder="location">
+                    <input type="text" name="location" placeholder="location" required>
                 </div>
                 <div>
                     <label for="Price">Price/night:</label>
-                    <input type="text" name="price" placeholder="price">
+                    <input type="number" name="price" placeholder="price" required>
                 </div>
                 <div>
                     <label for="description">describe your anounce:</label>
-                    <textarea name="description" placeholder="description"></textarea>
+                    <textarea name="description" placeholder="description" required></textarea>
                 </div>
                 <div>
                     <label for="pictures">Add pictures:</label>
@@ -58,40 +68,41 @@
                 </div>
                 <div>
                     <label for="size">Size:</label>
-                    <input type="number" name="size">
+                    <input type="number" name="size" required>
                 </div>
                 <div>
                     <label for="rooms">Rooms:</label>
-                    <input type="number" name="rooms">
+                    <input type="number" name="rooms" required>
                 </div>
                 <div>
                     <label for="kitchen">Kitchen:</label>
-                    <input type="number" name="kitchen">
+                    <input type="number" name="kitchen" required>
                 </div>
                 <div>
                     <label for="bathroom">Bathroom:</label>
-                    <input type="number" name="bathroom">
+                    <input type="number" name="bathroom" required>
                 </div>
                 <div>
                     <label for="bed">Bed:</label>
-                    <input type="number" name="bed">
+                    <input type="number" name="bed" required>
                 </div>
                 <div>
                     <label for="tv">Tvs:</label>
-                    <input type="number" name="tv">
+                    <input type="number" name="tv" required>
                 </div>
                 <div>
                     <label for="wifi">Wifi:</label>
-                    <input type="number" name="wifi">
+                    <input type="number" name="wifi" required>
                 </div>
                 <div>
                     <label for="Clima">Clima:</label>
-                    <input type="number" name="clima">
+                    <input type="number" name="clima" required>
                 </div>
                 <div class="button">
                     <button type="submit">Next</button>
                 </div>
             </form>
+            <a href="basic_infos.php?prev=true">Prev</a>
         </div>
     </section>
 </main>

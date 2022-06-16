@@ -1,4 +1,9 @@
-<?php include('nav.php') ?>
+<?php
+    session_start();
+    error_reporting(0);
+    $_SESSION['post'] = [];
+    include('nav.php');
+?>
 <main>
     <div class="container_1-2-3">
         <div class="onit">

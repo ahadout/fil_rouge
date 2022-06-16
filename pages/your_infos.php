@@ -1,4 +1,24 @@
-<?php include('nav.php') ?>
+<?php
+    session_start();
+    include('nav.php');
+    include('../login_signup/connect.php');
+    $_SESSION['title'] = $_POST['title'];
+    $_SESSION['location'] = $_POST['location'];
+    $_SESSION['price'] = $_POST['price'];
+    $_SESSION['description'] = $_POST['description'];
+    $_SESSION['picture'] = $_POST['pictures'];
+    $_SESSION['size'] = $_POST['size'];
+    $_SESSION['rooms'] = $_POST['rooms'];
+    $_SESSION['kitchen'] = $_POST['kitchen'];
+    $_SESSION['bathroom'] = $_POST['bathroom'];
+    $_SESSION['bed'] = $_POST['bed'];
+    $_SESSION['tv'] = $_POST['tv'];
+    $_SESSION['wifi'] = $_POST['wifi'];
+    $_SESSION['clima'] = $_POST['clima'];
+    $userID = $_SESSION['userID'];
+    // $sql = "UPDATE posts SET location='$location', title='$title', price='$price', description='$description', picture='$picture', size='$size', rooms='$rooms', kitchen='$kitchen', bathroom='$bathroom', bed='$bed', tvs='$tv', wifi='$wifi', clima='$clima' WHERE userID='$userID'";
+    // mysqli_query($connect, $sql);
+?>
 <main>
     <div class="container_1-2-3">
         <div class="prev">
@@ -35,7 +55,7 @@
     <section class="add_post_section">
         <div class="add_post_form">
             <h2>your contact informations</h2>
-            <form action="post_added.php" method="post">
+            <form action="add_post.php" method="post">
                 <div>
                     <label for="name">Full name:</label>
                     <input type="text" name="name" placeholder="full name">
@@ -55,8 +75,8 @@
                 <div class="button">
                     <button type="submit">Next</button>
                 </div>
-                
             </form>
+            <a href="basic_infos.php?prev=true">Prev</a>
         </div>
     </section>
 </main>

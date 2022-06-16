@@ -1,4 +1,24 @@
-<?php include('nav.php') ?>
+<?php
+    // session_start();
+    include('nav.php');
+    // include('../login_signup/connect.php');
+    // $userID = $_SESSION['userID'];
+    // $type = $_SESSION['type'];
+    // $city = $_SESSION['city'];
+    // $title = $_SESSION['title'];
+    // $location = $_SESSION['location'];
+    // $price = $_SESSION['price'];
+    // $description = $_SESSION['description'];
+    // $picture = $_SESSION['picture'];
+    // $size = $_SESSION['size'];
+    // $rooms = $_SESSION['rooms'];
+    // $kitchen = $_SESSION['kitchen'];
+    // $bathroom = $_SESSION['bathroom'];
+    // $bed = $_SESSION['bed'];
+    // $tv = $_SESSION['tv'];
+    // $wifi = $_SESSION['wifi'];
+    // $clima = $_SESSION['clima'];
+?>
 <main>
     <div class="container_1-2-3">
         <div class="prev">
@@ -36,11 +56,10 @@
         <div class="add_post_form">
             <h2>Your anounce succesfuly added</h2>
             <img src="../img/verified_icon.png" width="250px" height="250px">
-            <form action="your_infos.php" method="get">
+            <form action="../index.php" method="get">
                 <div class="button">
-                    <button type="submit">Next</button>
+                    <button type="submit">Home</button>
                 </div>
-                
             </form>
         </div>
     </section>

@@ -27,6 +27,7 @@
         $_SESSION['first_name'] = $row['first_name'];
         $_SESSION['last_name'] = $row['last_name'];
         $_SESSION['phone_nuber'] = $row['phone_number'];
+        $_SESSION['userID'] = $row['userID'];
         header("Location: ../index.php?login=true");
     }
     else{

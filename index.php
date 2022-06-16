@@ -1,12 +1,6 @@
 <?php 
     error_reporting(0);
     session_start();
-    // if($_GET['signup']=='true'){
-    //     echo 1;
-    // }
-    // elseif($_GET['signup'] == 'false'){
-    //     echo 2;
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +42,7 @@
                 <?php }?>
                 <ul>
                     <li><a href="#">things to do</a></li>
-                    <li><a href="pages/basic_infos.php">rent your house</a></li>
+                    <li><a <?php if(empty($_SESSION['userID'])){echo 'href="index.php?login=noUserID"';}else{echo 'href="pages/basic_infos.php"';}?>>rent your house</a></li>
                     <li><a href="#">help</a></li>
                 </ul>
             </div>
@@ -136,11 +130,11 @@
         </div>
     </div>
     <!-- login -->
-    <div class="pop-up <?php if(($_GET['login'] == 'true') or ($_GET['login'] == 'false')){ echo('block');}else{echo(' is_displayed');} ?>" id="login_popup">
+    <div class="pop-up <?php if(($_GET['login'] == 'true') or ($_GET['login'] == 'false') or ($_GET['login'] == 'noUserID')){ echo('block');}else{echo(' is_displayed');} ?>" id="login_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Login</h2>
-                <?php if($_GET['login']=='true'){echo '<a href="index.php">X</a>';}else{?><span id="login_close">X</span><?php }?>
+                <?php if($_GET['login']=='true'){echo '<a href="index.php?userID='.$_SESSION['userID'].'">X</a>';}else{?><span id="login_close">X</span><?php }?>
             </div>
             <div class="form_container">
                 <?php 
@@ -162,7 +156,22 @@
                         <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
                     </div>
                 </form>
-                <?php } else{?>
+                <?php
+                }
+                else if($_GET['login'] == 'noUserID'){
+                ?>
+                <p><b style="color: red;">You have to Log in to make an anounce</b></p>
+                <form action="./login_signup/login.php" method="post">
+                    <div>
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="password" placeholder="password" name="password" required>
+                    </div>
+                    <div>
+                        <button id="submit_btn" type="submit" name="login">Submit</button>
+                        <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
+                    </div>
+                </form>
+                <?php }else{?>
                     <form action="./login_signup/login.php" method="post">
                     <div>
                         <input type="text" placeholder="Email" name="email" required>
