@@ -34,24 +34,9 @@
     </div>
     <section class="add_post_section">
         <div class="add_post_form">
-            <h2>general informations</h2>
+            <h2>Your anounce succesfuly added</h2>
+            <img src="../img/verified_icon.png" width="250px" height="250px">
             <form action="your_infos.php" method="get">
-                <div>
-                    <label for="type">Type of service:</label>
-                    <select id="service_type" name="type">
-                        <option value="maison">Maison</option>
-                        <option value="mini_hotel">Mini hotel</option>
-                        <option value="thing_to_do">Thing to do</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="city">City:</label>
-                    <select id="city" name="city">
-                        <option value="tangier">Tangier</option>
-                        <option value="tetouan">Tetouane</option>
-                        <option value="houceima">Houceima</option>
-                    </select>
-                </div>
                 <div class="button">
                     <button type="submit">Next</button>
                 </div>

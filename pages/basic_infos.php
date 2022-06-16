@@ -35,7 +35,7 @@
     <section class="add_post_section">
         <div class="add_post_form">
             <h2>general informations</h2>
-            <form action="description.php" method="get">
+            <form action="description.php" method="post">
                 <div>
                     <label for="type">Type of service:</label>
                     <select id="service_type" name="type">

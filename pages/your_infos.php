@@ -29,28 +29,28 @@
                     <span>3</span>
                 </div>
             </div>
-            <p id="p3" class="onit_p">Describe your service</p>
+            <p id="p3" class="onit_p">Your infos</p>
         </div>
     </div>
     <section class="add_post_section">
         <div class="add_post_form">
-            <h2>general informations</h2>
-            <form action="post_added.php" method="get">
+            <h2>your contact informations</h2>
+            <form action="post_added.php" method="post">
                 <div>
-                    <label for="type">Type of service:</label>
-                    <select id="service_type" name="type">
-                        <option value="maison">Maison</option>
-                        <option value="mini_hotel">Mini hotel</option>
-                        <option value="thing_to_do">Thing to do</option>
-                    </select>
+                    <label for="name">Full name:</label>
+                    <input type="text" name="name" placeholder="full name">
                 </div>
                 <div>
-                    <label for="city">City:</label>
-                    <select id="city" name="city">
-                        <option value="tangier">Tangier</option>
-                        <option value="tetouan">Tetouane</option>
-                        <option value="houceima">Houceima</option>
-                    </select>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" placeholder="email">
+                </div>
+                <div>
+                    <label for="phone">Phone N°:</label>
+                    <input type="number" name="phone" placeholder="phone N°">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="number" name="password" placeholder="password">
                 </div>
                 <div class="button">
                     <button type="submit">Next</button>
