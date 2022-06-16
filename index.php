@@ -194,15 +194,30 @@
             </div>
             <div class="container">
                 <div class="row g-3">
+                    <?php 
+                        include 'login_signup/connect.php';
+                        $sql = "SELECT * FROM posts";
+                        $result = mysqli_query($connect, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+                        if ($resultCheck > 0){
+                            while ($row = mysqli_fetch_assoc($result)){
+                                $userID = $row['userID'];
+                                $sql2 = "SELECT first_name, last_name FROM users WHERE userID='$userID'";
+                                $result2 = mysqli_query($connect, $sql2);
+                                $publisher = mysqli_fetch_assoc($result2);
+                    ?>
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="card" style="width: 100%;">
                             <img src="img/akchour.jpg" class="card-img-top" alt="akchour">
                             <div class="card-body">
-                                <h5 class="card-title">Post title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title"><?php echo '<a class="link-dark text-decoration-none" href="pages/post_details.php">'.$row['title'].', '.$row['city'].'</a>'; ?></h5>
+                                <p class="card-text text-muted">House rented by: <?php echo $publisher['first_name'] .' '. $publisher['last_name']; ?></p>
+                                <p><b><?php echo $row['price'].'MAD/night' ?></b></p>
                             </div>
                         </div>
                     </div>
+                    <?php }
+                        }?>
                 </div>
             </div>
         </section>

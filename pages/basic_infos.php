@@ -1,7 +1,6 @@
 <?php
     session_start();
     error_reporting(0);
-    $_SESSION['post'] = [];
     include('nav.php');
 ?>
 <main>
