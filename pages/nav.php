@@ -27,10 +27,17 @@
                 <img id="profile_icon" src="../img/profil-de-lutilisateur.png" width="35px" height="35px">
             </div>
             <div class="nav_menu nav_menu_display" id="nav_menu">
+                <?php 
+                    if($_SESSION['isLogedin'] == 'true'){?>
+                        <ul>
+                            <li><a href="pages/profile.php"><?php echo $_SESSION['last_name']; ?></a></li>
+                        </ul>
+                <?php}else{ ?>
                 <ul>
                     <li><a href="#" id="sign_up">Sign-up</a></li>
                     <li><a href="#" id="login">Login</a></li>
                 </ul>
+                <?php }?>
                 <ul>
                     <li><a href="#">things to do</a></li>
                     <li><a href="#">rent your house</a></li>

@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css/popup.css"><!-- pop-ups style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap -->
     <link href="css/all.min.css"><!-- font awesom -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><!-- React -->
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><!-- React -->
     <title>Chamal visit</title>
 </head>
 <body>
@@ -32,7 +30,7 @@
                 <?php 
                     if($_SESSION['isLogedin'] == 'true'){?>
                         <ul>
-                            <li><a><?php echo $_SESSION['last_name']; ?></a></li>
+                            <li><a href="pages/profile.php"><?php echo $_SESSION['last_name']; ?></a></li>
                         </ul>
                 <?php }else{ ?>
                 <ul>
@@ -130,7 +128,7 @@
         </div>
     </div>
     <!-- login -->
-    <div class="pop-up <?php if(($_GET['login'] == 'true') or ($_GET['login'] == 'false') or ($_GET['login'] == 'noUserID')){ echo('block');}else{echo(' is_displayed');} ?>" id="login_popup">
+    <div class="pop-up <?php if(($_GET['login'] == 'true') or ($_GET['login'] == 'false') or ($_GET['login'] == 'noUserID') or ($_GET['login'] == 'logedout')){ echo('block');}else{echo(' is_displayed');} ?>" id="login_popup">
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Login</h2>
@@ -171,6 +169,18 @@
                         <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
                     </div>
                 </form>
+                <?php }else if($_GET['login'] == 'logedout'){?>
+                    <p><b style="color: red;">You just log-out your account</b></p>
+                    <form action="./login_signup/login.php" method="post">
+                        <div>
+                            <input type="text" placeholder="Email" name="email" required>
+                            <input type="password" placeholder="password" name="password" required>
+                        </div>
+                        <div>
+                            <button id="submit_btn" type="submit" name="login">Submit</button>
+                            <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
+                        </div>
+                    </form>
                 <?php }else{?>
                     <form action="./login_signup/login.php" method="post">
                     <div>
@@ -181,7 +191,7 @@
                         <button id="submit_btn" type="submit" name="login">Submit</button>
                         <p>You do not have an accout?<a class="go_login" onclick="switch_to_signup()">Sing-up now</a></p>
                     </div>
-                </form>
+                    </form>
                 <?php }?>
             </div>
         </div>
@@ -206,13 +216,13 @@
                                 $result2 = mysqli_query($connect, $sql2);
                                 $publisher = mysqli_fetch_assoc($result2);
                     ?>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="card" style="width: 100%;">
-                            <img src="img/akchour.jpg" class="card-img-top" alt="akchour">
-                            <div class="card-body">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="box card">
+                            <img src="img/card_image.JPG" class="card-img-top" alt="akchour">
+                            <div class=" card-body">
                                 <h5 class="card-title"><?php echo '<a class="link-dark text-decoration-none" href="pages/post_details.php">'.$row['title'].', '.$row['city'].'</a>'; ?></h5>
                                 <p class="card-text text-muted">House rented by: <?php echo $publisher['first_name'] .' '. $publisher['last_name']; ?></p>
-                                <p><b><?php echo $row['price'].'MAD/night' ?></b></p>
+                                <p class="price"><b><?php echo $row['price'].'MAD/night' ?></b></p>
                             </div>
                         </div>
                     </div>
