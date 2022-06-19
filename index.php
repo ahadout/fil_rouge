@@ -57,17 +57,17 @@
                 <button id="square_right" onclick="slide_right()"><p id="arrow_right">></p></button>
             </div>
         </div>
-        <form class="search_form">
+        <form class="search_form" action="index.php?display=search#main" method="post">
             <div class="search_location">
                 <label>What's you direction ?</label>
-                <input type="text" placeholder="Your direction..">
+                <input type="text" name="city" placeholder="Your direction..">
             </div>
             <div class="search_date">
                 <label>Date</label>
                 <input type="date">
             </div>
             <div class="search_btn">
-                <button type="button">Search</button>
+                <button type="submit" name="submit">Search</button>
             </div>
         </form>
         <div class="slide_container">
@@ -206,7 +206,13 @@
                 <div class="row g-3">
                     <?php 
                         include 'login_signup/connect.php';
-                        $sql = "SELECT * FROM posts";
+                        if($_GET['display'] == 'search'){
+                            $city = $_POST['city'];
+                            $sql = "SELECT * FROM posts WHERE city='$city'";
+                        }
+                        else{
+                            $sql = "SELECT * FROM posts";
+                        }
                         $result = mysqli_query($connect, $sql);
                         $resultCheck = mysqli_num_rows($result);
                         if ($resultCheck > 0){
