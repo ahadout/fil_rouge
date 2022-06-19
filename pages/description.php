@@ -45,7 +45,7 @@
     <section class="add_post_section">
         <div class="add_post_form">
             <h2>describe your service</h2>
-            <form action="your_infos.php" method="post">
+            <form action="your_infos.php" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="title">Anounce title:</label>
                     <input type="text" name="title" placeholder="anounce title" required>
@@ -64,7 +64,7 @@
                 </div>
                 <div>
                     <label for="pictures">Add pictures:</label>
-                    <input type="file" name="pictures">
+                    <input type="file" name="pictures[]" multiple>
                 </div>
                 <div>
                     <label for="size">Size:</label>
@@ -99,7 +99,7 @@
                     <input type="number" name="clima" required>
                 </div>
                 <div class="button">
-                    <button type="submit">Next</button>
+                    <button type="submit" name="submit" value="Upload">Next</button>
                 </div>
             </form>
             <a href="basic_infos.php?prev=true">Prev</a>

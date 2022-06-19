@@ -1,12 +1,11 @@
 <?php
-    session_start();
     include('nav.php');
     include('../login_signup/connect.php');
     $_SESSION['title'] = $_POST['title'];
     $_SESSION['location'] = $_POST['location'];
     $_SESSION['price'] = $_POST['price'];
     $_SESSION['description'] = $_POST['description'];
-    $_SESSION['picture'] = $_POST['pictures'];
+    $_SESSION['picture'] = $_FILES;
     $_SESSION['size'] = $_POST['size'];
     $_SESSION['rooms'] = $_POST['rooms'];
     $_SESSION['kitchen'] = $_POST['kitchen'];

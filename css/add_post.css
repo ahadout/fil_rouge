@@ -4,6 +4,7 @@
     width: 100%;
     padding: 0px 65px;
 }
+
 /* page on */
 .onit_num_line{
     display: flex;
@@ -38,8 +39,8 @@
     align-self: center;
     background-color: #0059CD;
 }
-
 /*  */
+
 /* next */
 .next_num_line{
     display: flex;

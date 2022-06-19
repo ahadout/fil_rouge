@@ -34,8 +34,8 @@
                         </ul>
                 <?php }else{ ?>
                 <ul>
-                    <li><a id="sign_up">Sign-up</a></li>
-                    <li><a id="login">Login</a></li>
+                    <li><a id="sign_up" href="#header">Sign-up</a></li>
+                    <li><a id="login" href="#header">Login</a></li>
                 </ul>
                 <?php }?>
                 <ul>
@@ -132,7 +132,7 @@
         <div class="sign-up_container">
             <div class="pop-up_title">
                 <h2>Login</h2>
-                <?php if($_GET['login']=='true'){echo '<a href="index.php?userID='.$_SESSION['userID'].'">X</a>';}else{?><span id="login_close">X</span><?php }?>
+                <?php if(($_GET['login']=='true') or ($_GET['login']=='logedout')){echo '<a href="index.php?userID='.$_SESSION['userID'].'">X</a>';}else{?><span id="login_close">X</span><?php }?>
             </div>
             <div class="form_container">
                 <?php 
@@ -220,7 +220,7 @@
                         <div class="box card">
                             <img src="img/card_image.JPG" class="card-img-top" alt="akchour">
                             <div class=" card-body">
-                                <h5 class="card-title"><?php echo '<a class="link-dark text-decoration-none" href="pages/post_details.php">'.$row['title'].', '.$row['city'].'</a>'; ?></h5>
+                                <h5 class="card-title"><?php echo '<a class="link-dark text-decoration-none" href="pages/post_details.php?userID='.$row['userID'].'&numero_post='.$row['numero_post'].'">'.$row['title'].', '.$row['city'].'</a>'; ?></h5>
                                 <p class="card-text text-muted">House rented by: <?php echo $publisher['first_name'] .' '. $publisher['last_name']; ?></p>
                                 <p class="price"><b><?php echo $row['price'].'MAD/night' ?></b></p>
                             </div>
