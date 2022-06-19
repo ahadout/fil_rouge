@@ -38,7 +38,7 @@
                         <p><?php echo $date2?></p>
                     </div>
                 </div>
-                <form action="reserv_done.php" method="post">
+                <form action="add_reserv_infos.php?numero_post=<?php echo $numero_post;?>" method="post">
                     <div class="confirm_form">
                         <div class="phone">
                             <label>Phone number</label>
