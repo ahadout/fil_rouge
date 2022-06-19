@@ -50,7 +50,7 @@
                 <h1>Welcom to Chamal</h1>
             </div>
             <div class="title">
-                <h2 id="caption">Dalia Beach</h2>
+                <h2 id="caption">For best holiday</h2>
             </div>
             <div class="arrow_container">
                 <button id="square_left" onclick="slide_left()"><p id="arrow_left"><</p></button>

@@ -10,7 +10,7 @@
     <form id="modify_form" action="profile.php?modify=true&post_modified=<?php echo $numero_post?>" method="post">
         <div>
             <label for="type">Type of service</label>
-            <select id="service_type" name="type">
+            <select class="modify_form_select" id="service_type" name="type">
                 <option value="maison">Maison</option>
                 <option value="mini_hotel">Mini hotel</option>
                 <option value="thing_to_do">Thing to do</option>
@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="city">City</label>
-            <select id="city" name="city">
+            <select class="modify_form_select" id="city" name="city">
                 <option value="tangier">Tangier</option>
                 <option value="tetouan">Tetouane</option>
                 <option value="houceima">Houceima</option>
