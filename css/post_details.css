@@ -100,17 +100,22 @@
 .phone,.message{
     margin-bottom: 25px;
 }
+.phone{
+    display: flex;
+    flex-direction: column;
+}
 .phone input{
     border: 1px solid grey;
     border-radius: 10px;
     padding: 5px;
+    width: 100%;
 }
 .message{
     display: flex;
     flex-direction: column;
 }
 .message textarea{
-    width: 80%;
+    width: 100%;
     border: 1px solid grey;
     border-radius: 10px;
     padding: 5px;
