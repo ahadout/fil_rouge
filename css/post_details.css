@@ -73,6 +73,7 @@
     border-top-left-radius: 0;
 }
 .reserv_btn{
+    width: 100%;
     padding: 5px;
     border: none;
     background-color: #6DD7FE;
@@ -81,3 +82,82 @@
 }
 
 /* confirm reservation style */
+.confirm_title{
+    margin-bottom: 25px;
+}
+.confirm_title h1 a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
+.arrival,.depart{
+    line-height: 15px;
+    margin-bottom: 30px;
+}
+.depart{
+    border-bottom: 1px solid gray;
+}
+.phone,.message{
+    margin-bottom: 25px;
+}
+.phone input{
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+}
+.message textarea{
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+    padding-bottom: 50px;
+}
+.left_1{
+    display: flex;
+    border-bottom: 1px solid grey;
+    line-height: 0px;
+}
+.image{
+    margin-right: 20px;
+}
+.image img{
+    border-radius: 10px;
+}
+.left_2{
+    border-bottom: 1px solid grey;
+    line-height: 10px;
+}
+.left_2 div{
+    display: flex;
+    justify-content: space-between;
+}
+.left_3{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* done style */
+#add_post_form{
+    display: flex;
+    flex-direction: column;
+}
+#add_post_form h2{
+    text-align: center;
+}
+#add_post_form img{
+    align-self: center;
+    justify-self: center;
+}
+#home_btn_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+#home_btn{
+    grid-column: 2/3;
+    width: 100%;
+}
