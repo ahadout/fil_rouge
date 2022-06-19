@@ -12,7 +12,6 @@
     $sql3 = "SELECT * FROM users WHERE userID='$userID'";
     $result3 = mysqli_query($connect, $sql3);
     $row3 = mysqli_fetch_assoc($result3);
-
 ?>
 <main>
     <section class="post_details_section">
@@ -20,11 +19,11 @@
         <p><?php echo ucwords($row['city']).', '. ucwords($row['location']); ?></p>
         <?php
             $numero_post = $_GET['numero_post'];
-            $sql2 = "SELECT * FROM images WHERE numero_post='$numero_post'";
-            $result2 = mysqli_query($connect, $sql2);
-            $resultCheck2 = mysqli_num_rows($result2);
-            if($resultCheck2 > 0){
-                while($row2 = mysqli_fetch_assoc($result2)){
+            // $sql2 = "SELECT * FROM images WHERE numero_post='$numero_post'";
+            // $result2 = mysqli_query($connect, $sql2);
+            // $resultCheck2 = mysqli_num_rows($result2);
+            if($resultCheck > 0){
+                while($row = mysqli_fetch_assoc($result)){
         ?>
         <img src="../image_uploded/<?php echo $row2['image'];?>">
         <?php

@@ -30,7 +30,7 @@
                 <?php 
                     if($_SESSION['isLogedin'] == 'true'){?>
                         <ul>
-                            <li><a href="pages/profile.php"><?php echo $_SESSION['last_name']; ?></a></li>
+                            <li><a href="pages/profile.php"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></a></li>
                         </ul>
                 <?php }else{ ?>
                 <ul>
