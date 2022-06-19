@@ -243,12 +243,12 @@ nav{
     place-self: center;
     width: 100%;
 }
-.search_form div label,input{
+.search_form div label,input,select{
     width: 80%;
     justify-self: center;
     align-self: center;
 }
-.search_form div input{
+.search_form div input,select{
     margin-top: 6px;
     padding: 10px;
     border: none;

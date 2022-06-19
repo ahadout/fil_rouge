@@ -60,7 +60,13 @@
         <form class="search_form" action="index.php?display=search#main" method="post">
             <div class="search_location">
                 <label>What's you direction ?</label>
-                <input type="text" name="city" placeholder="Your direction..">
+                <select name="city">
+                    <option value="all_cities" slected>All cities</option>
+                    <option value="tangier">Tangier</option>
+                    <option value="tetouan">Tetouane</option>
+                    <option value="houceima">Houceima</option>
+                </select>
+                <!-- <input type="text" name="city" placeholder="Your direction.."> -->
             </div>
             <div class="search_date">
                 <label>Date</label>
@@ -206,7 +212,7 @@
                 <div class="row g-3">
                     <?php 
                         include 'login_signup/connect.php';
-                        if($_GET['display'] == 'search'){
+                        if(($_GET['display'] == 'search') and ($_POST['city'] != 'all_cities')){
                             $city = $_POST['city'];
                             $sql = "SELECT * FROM posts WHERE city='$city'";
                         }
