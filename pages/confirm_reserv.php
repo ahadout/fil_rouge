@@ -3,10 +3,13 @@
     $numero_post = $_GET['numero_post'];
     $date1 = $_POST['arrival_date'];
     $date2 = $_POST['depart_date'];
+    $date3 = date("Y-m-d");
+    $today = strtotime($date3);
     $arrival_date = strtotime($date1);
     $depart_date = strtotime($date2);
     $days_reserved = ($depart_date - $arrival_date)/60/60/24;
-    if($days_reserved <= 0){
+    $valid_date = ($arrival_date - $today)/60/60/24;
+    if(($days_reserved <= 0) or ($valid_date < 0)){
         $location = 'Location: post_details.php?userID='.$userID.'&numero_post='.$numero_post.'&reserved=false';
         header($location);
     }

@@ -125,7 +125,7 @@
             <div class="left">
                 <div>
                     <h3><?php echo $row['price']?>MAD /night</h3>
-                    <?php if($_GET['reserved'] == 'false'){ echo '<p style="color: red;"><b>Enter a valid value:</b> depart date have to be after the arrival date</p>';} ?>
+                    <?php if($_GET['reserved'] == 'false'){ echo '<p style="color: red;"><b>Enter a valid value:</b> depart date have to be bigger than the arrival date and arrival date bigger than or equal todys date</p>';} ?>
                 </div>
                 <form class="reserv_form" action="confirm_reserv.php?userID=<?php echo $_GET['userID']?>&numero_post=<?php echo $_GET['numero_post']?>" method="post">
                     <div class="date_inputs">
@@ -140,6 +140,20 @@
                     </div>
                     <button class="reserv_btn" type="submit" name="submit">Reserve</button>
                 </form>
+            </div>
+            <div class="left_bottom">
+                <?php 
+                    $sql4 = "SELECT * FROM reservation WHERE numero_post='$numero_post'";
+                    $result4 = mysqli_query($connect, $sql4);
+                    $resultCheck4 = mysqli_num_rows($result4);
+                    if($resultCheck4 > 0){
+                        echo '<p><b>This annouce is already reserved on these dates:</b></p>';
+                        while($row4 = mysqli_fetch_assoc($result4)){
+                ?>
+                <div>
+                    <p><?php echo 'from: '. $row4['arrivage_date'].' to: '. $row4['depart_date']; ?></p>
+                </div>
+                <?php  }}?>
             </div>
         </form>
     </section>
