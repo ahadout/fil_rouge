@@ -38,7 +38,7 @@
                         <p><?php echo $date2?></p>
                     </div>
                 </div>
-                <form action="add_reserv_infos.php?numero_post=<?php echo $numero_post;?>" method="post">
+                <form action="<?php if($_SESSION['isLogedin'] == 'true'){echo 'add_reserv_infos.php?numero_post='.$numero_post;}else{echo '../index.php?login=noUserID';}?>" method="post">
                     <div class="confirm_form">
                         <div class="phone">
                             <label>Phone number</label>

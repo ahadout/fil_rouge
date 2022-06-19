@@ -158,7 +158,7 @@
                 }
                 else if($_GET['login'] == 'noUserID'){
                 ?>
-                <p><b style="color: red;">You have to Log in to make an anounce</b></p>
+                <p><b style="color: red;">You have to Log_in to continue</b></p>
                 <form action="./login_signup/login.php" method="post">
                     <div>
                         <input type="text" placeholder="Email" name="email" required>
