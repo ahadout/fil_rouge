@@ -34,43 +34,47 @@
         </div>
         <div>
             <label for="Price">Price/night:</label>
-            <input type="number" name="price" value="<?php echo $row['price'];?>" required>
+            <input type="number" name="price" value="<?php echo $row['price'];?>" min="1" required>
         </div>
         <div>
             <label for="description">describe your anounce:</label>
             <textarea name="description" value="<?php echo $row['description'];?>" required></textarea>
         </div>
         <div>
+            <label for="pictures">Add picture:</label>
+            <input type="file" name="pictures">
+        </div>
+        <div>
             <label for="size">Size:</label>
-            <input type="number" name="size" value="<?php echo $row['size'];?>" required>
+            <input type="number" name="size" value="<?php echo $row['size'];?>" min="1" required>
         </div>
         <div>
             <label for="rooms">Rooms:</label>
-            <input type="number" name="rooms" value="<?php echo $row['rooms'];?>" required>
+            <input type="number" name="rooms" value="<?php echo $row['rooms'];?>" min="1" required>
         </div>
         <div>
             <label for="kitchen">Kitchen:</label>
-            <input type="number" name="kitchen" value="<?php echo $row['kitchen'];?>" required>
+            <input type="number" name="kitchen" value="<?php echo $row['kitchen'];?>" min="1" required>
         </div>
         <div>
             <label for="bathroom">Bathroom:</label>
-            <input type="number" name="bathroom" value="<?php echo $row['bathroom'];?>" required>
+            <input type="number" name="bathroom" value="<?php echo $row['bathroom'];?>" min="1" required>
         </div>
         <div>
             <label for="bed">Bed:</label>
-            <input type="number" name="bed" value="<?php echo $row['bed'];?>" required>
+            <input type="number" name="bed" value="<?php echo $row['bed'];?>" min="1" required>
         </div>
         <div>
             <label for="tv">Tvs:</label>
-            <input type="number" name="tv" value="<?php echo $row['tvs'];?>" required>
+            <input type="number" name="tv" value="<?php echo $row['tvs'];?>" min="1" required>
         </div>
         <div>
             <label for="wifi">Wifi:</label>
-            <input type="number" name="wifi" value="<?php echo $row['wifi'];?>" required>
+            <input type="number" name="wifi" value="<?php echo $row['wifi'];?>" min="1" required>
         </div>
         <div>
             <label for="Clima">Clima:</label>
-            <input type="number" name="clima" value="<?php echo $row['clima'];?>" required>
+            <input type="number" name="clima" value="<?php echo $row['clima'];?>" min="1" required>
         </div>
         <div>
             <button type="submit">Modify</button>

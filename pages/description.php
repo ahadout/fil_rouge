@@ -56,7 +56,7 @@
                 </div>
                 <div>
                     <label for="Price">Price/night:</label>
-                    <input type="number" name="price" placeholder="price" required>
+                    <input type="number" name="price" placeholder="price" min="1" required>
                 </div>
                 <div>
                     <label for="description">describe your anounce:</label>
@@ -68,35 +68,35 @@
                 </div>
                 <div>
                     <label for="size">Size:</label>
-                    <input type="number" name="size" required>
+                    <input type="number" name="size" min="1" required>
                 </div>
                 <div>
                     <label for="rooms">Rooms:</label>
-                    <input type="number" name="rooms" required>
+                    <input type="number" name="rooms" min="1" required>
                 </div>
                 <div>
                     <label for="kitchen">Kitchen:</label>
-                    <input type="number" name="kitchen" required>
+                    <input type="number" name="kitchen" min="1" required>
                 </div>
                 <div>
                     <label for="bathroom">Bathroom:</label>
-                    <input type="number" name="bathroom" required>
+                    <input type="number" name="bathroom" min="1" required>
                 </div>
                 <div>
                     <label for="bed">Bed:</label>
-                    <input type="number" name="bed" required>
+                    <input type="number" name="bed" min="1" required>
                 </div>
                 <div>
                     <label for="tv">Tvs:</label>
-                    <input type="number" name="tv" required>
+                    <input type="number" name="tv" min="1" required>
                 </div>
                 <div>
                     <label for="wifi">Wifi:</label>
-                    <input type="number" name="wifi" required>
+                    <input type="number" name="wifi" min="1" required>
                 </div>
                 <div>
                     <label for="Clima">Clima:</label>
-                    <input type="number" name="clima" required>
+                    <input type="number" name="clima" min="1" required>
                 </div>
                 <div class="button">
                     <button type="submit" name="submit" value="Upload">Next</button>

@@ -107,7 +107,7 @@
                         <input type="text" placeholder="First name" name="f_name" required>
                         <input type="text" placeholder="Last name" name="l_name" required>
                         <input type="text" placeholder="Email" name="email" required>
-                        <input type="number" placeholder="phone number" name="phone" required>
+                        <input type="number" placeholder="phone number" name="phone" min="0" required>
                         <input type="password" placeholder="password" name="password" required>
                     </div>
                     <div>
@@ -121,7 +121,7 @@
                         <input type="text" placeholder="First name" name="f_name" required>
                         <input type="text" placeholder="Last name" name="l_name" required>
                         <input type="text" placeholder="Email" name="email" required>
-                        <input type="number" placeholder="phone number" name="phone" required>
+                        <input type="number" placeholder="phone number" name="phone" min="0" required>
                         <input type="password" placeholder="password" name="password" required>
                     </div>
                     <div>
@@ -230,7 +230,8 @@
                     ?>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="box card">
-                            <img src="img/card_image.JPG" class="card-img-top" alt="akchour">
+                            <!-- <img src="img/card_image.JPG" class="card-img-top" alt="akchour"> -->
+                            <img src="./img/<?php echo $row['picture']; ?>" style="width:100%; height:100%;" class="card-img-top" alt="akchour">
                             <div class=" card-body">
                                 <h5 class="card-title"><?php echo '<a class="link-dark text-decoration-none" href="pages/post_details.php?userID='.$row['userID'].'&numero_post='.$row['numero_post'].'">'.$row['title'].', '.$row['city'].'</a>'; ?></h5>
                                 <p class="card-text text-muted">House rented by: <?php echo $publisher['first_name'] .' '. $publisher['last_name']; ?></p>

@@ -56,7 +56,7 @@ error_reporting(0);
                 <form>
                     <div>
                         <input type="text" placeholder="Email">
-                        <input type="number" placeholder="phone number">
+                        <input type="number" placeholder="phone number" min="0">
                         <input type="password" placeholder="password">
                         <input type="password" placeholder="comfirm password">
                     </div>

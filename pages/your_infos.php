@@ -65,11 +65,11 @@
                 </div>
                 <div>
                     <label for="phone">Phone N°:</label>
-                    <input type="number" name="phone" placeholder="phone N°">
+                    <input type="number" name="phone" placeholder="phone N°" min="0">
                 </div>
                 <div>
                     <label for="password">Password:</label>
-                    <input type="number" name="password" placeholder="password">
+                    <input type="text" name="password" placeholder="password">
                 </div>
                 <div class="button">
                     <button type="submit">Next</button>

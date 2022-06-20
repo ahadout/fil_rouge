@@ -362,6 +362,13 @@ footer button{
     align-self: flex-start;
     width: 45%;
 }
+.profile_section{
+    padding-top: 35px;
+    border-top: 1px solid grey;
+}
+.profile_section h2{
+    margin-bottom: 15px;
+}
 
 /* media query */
 @media only screen and (max-width: 1175px){

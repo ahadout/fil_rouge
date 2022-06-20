@@ -9,6 +9,7 @@
         $location = $_POST['location'];
         $price = $_POST['price'];
         $description = $_POST['description'];
+        $picture = $_POST['pictures'];
         $size = $_POST['size'];
         $rooms = $_POST['rooms'];
         $kitchen = $_POST['kitchen'];
@@ -17,7 +18,7 @@
         $tv = $_POST['tv'];
         $wifi = $_POST['wifi'];
         $clima = $_POST['clima'];
-        $sql3 = "UPDATE posts SET type='$type',city='$city',location='$location',title='$title',price='$price',description='$description',size='$size',rooms='$rooms',kitchen='$kitchen',bathroom='$bathroom',bed='$bed',tvs='$tv',wifi='$wifi',clima='$clima' WHERE numero_post='$numero_post';";
+        $sql3 = "UPDATE posts SET type='$type',city='$city',location='$location',title='$title',price='$price',description='$description',picture='$picture',size='$size',rooms='$rooms',kitchen='$kitchen',bathroom='$bathroom',bed='$bed',tvs='$tv',wifi='$wifi',clima='$clima' WHERE numero_post='$numero_post';";
         mysqli_query($connect, $sql3);
     }
     else if($_GET['delete'] == 'delete_reserv'){
@@ -25,8 +26,6 @@
         $sql3 = "DELETE FROM reservation WHERE numero_post='$numero_post';";
         mysqli_query($connect, $sql3);
         header('Location: profile.php?delete=delete_post&post_to_delete='.$numero_post);
-        // $sql4 = "DELETE FROM posts WHERE numero_post='$numero_post';";
-        // mysqli_query($connect, $sql4);
     }
     else if($_GET['delete'] == 'delete_post'){
         $numero_post = $_GET['post_to_delete'];
@@ -46,7 +45,7 @@
 <main>
     <img src="../img/profil-de-lutilisateur.png" height="100px" width="100px">
     <a href="../login_signup/logout.php" class="btn btn-danger">log out</a>
-    <section>
+    <section class="profile_section">
         <h2>Your anounces:</h2>
         <div class="container">
             <div class="row g-3">
@@ -56,7 +55,7 @@
                 ?>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="box card">
-                        <img src="img/card_image.JPG" class="card-img-top" alt="anouncement">
+                        <img src="../img/<?php echo $row['picture'];?>" class="card-img-top" alt="anouncement">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']?></h5>
                             <p class="card-text text-muted">House rented by: you</p>
